@@ -2,7 +2,10 @@ body {
     font-family:Courier;
     text-align:center;
     }
-
+p { 
+    color: rgb(237, 190, 202);
+    font-size: 14px;
+    }
 
 
 
