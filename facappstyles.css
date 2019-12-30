@@ -8,9 +8,9 @@ p {
     }
 .collage{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 5vw);
-
+    grid-template-columns: 375px 375px 375px;
+    grid-template-rows: 500px 500px;
+    grid-gap:15px;
 }
 .collage_img {
     width: 100%;
