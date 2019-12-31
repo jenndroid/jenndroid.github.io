@@ -17,5 +17,10 @@ p {
     grid-template-rows: repeat(3, 500px);
     grid-template-columns: repeat(3, 375px);
 }
+/*It was really hard to target each picture!*/
+/* Here I have targeted the first image with its own class name and used span to place it accurately*/
+.collage__img--1{
+    grid-column: 1 / span 2;
+}
 
 
