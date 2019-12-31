@@ -17,17 +17,21 @@ p {
     grid-template-rows: repeat(4, 250px);
     grid-template-columns: repeat(6, 187.5px);
 }
-/*It was really hard to target each picture!*/
-/* Still not sure whether to use item or img tag... neither seems to resize the image in the grid. */
-/* grid-column: 1 / span 2 places the picture correct size and placement, should I need to go back lol*/
-/*this is not executing... I am trying to place the image on the grid lines so that it is half size, correct ratios*/
+
+/*I don't really know what this code does because I just googled around and tried things from various reddit questions*/
+/*I am targeting the specific image with this class, not the item (in my code, are the item and image linked?? confusion)*/
+/*first four lines are what allowed me to actually achieve the resizing! grid-column instructions without these didn't work*/
 .collage__img--1{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 2;
-       
+    grid-row-end: 2;      
 }
+
 
 
 
