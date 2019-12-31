@@ -32,6 +32,27 @@ p {
     grid-row-end: 2;      
 }
 
+/*all this code works to get the picture where I want it and actual size (two grid boxes)*/
+.collage__img--2{
+    width: 200%;
+    height: 200%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;      
+}
+
+/*size is correct but I can't seem to move it to the correct place using the above methods*/
+.collage__img--3{
+    width: 300%;
+    height: 300%;
+    display: block;
+    object-fit: cover;
+
+}
+
 
 
 
