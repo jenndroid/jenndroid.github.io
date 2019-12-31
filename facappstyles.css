@@ -14,15 +14,20 @@ p {
 
 .collage{
     display: grid;
-    grid-template-rows: repeat(3, 500px);
-    grid-template-columns: repeat(3, 375px);
+    grid-template-rows: repeat(4, 250px);
+    grid-template-columns: repeat(6, 187.5px);
 }
 /*It was really hard to target each picture!*/
-/* Here I have targeted the first image with its own class name and used span to place it accurately*/
+/* Still not sure whether to use item or img tag... neither seems to resize the image in the grid. */
 /* grid-column: 1 / span 2 places the picture correct size and placement, should I need to go back lol*/
+/*this is not executing... I am trying to place the image on the grid lines so that it is half size, correct ratios*/
 .collage__img--1{
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+       
 }
+
 
 
