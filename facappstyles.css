@@ -32,7 +32,7 @@ p {
     grid-row-end: 2;      
 }
 
-/*all this code works to get the picture where I want it and actual size (two grid boxes)*/
+/*this code works for actual size (two grid boxes)*/
 .collage__img--2{
     width: 200%;
     height: 200%;
@@ -44,13 +44,23 @@ p {
     grid-row-end: 3;      
 }
 
-/*size is correct but I can't seem to move it to the correct place using the above methods*/
-.collage__img--3{
+
+/*for triple the size it looks like I need to code the collage item first like this, then the image separately underneath...*/
+/*dunno why this works... do I need both these bits?? */
+.collage__item--3{
     width: 300%;
     height: 300%;
     display: block;
     object-fit: cover;
+    grid-column-start: 4;
+}
 
+.collage__img--3{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 4;
 }
 
 
