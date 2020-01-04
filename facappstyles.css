@@ -46,6 +46,7 @@ p {
 
 
 /*for triple the size it looks like I need to code the collage item first like this, then the image separately underneath...*/
+/*notice that the ITEM is at 300% but the img is at 100%*/
 /*dunno why this works... do I need both these bits?? */
 .collage__item--3{
     width: 300%;
@@ -63,6 +64,40 @@ p {
     grid-column-start: 4;
 }
 
+/*again I had to write the item and then the img inside it for the last two*/
+.collage__item--4{
+    width: 200%;
+    height: 200%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 3;
+    grid-row-start: 2;     
+}
+.collage__img--4{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 3;
+    grid-row-start: 2;     
+}
+
+.collage__item--5{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 1;
+    grid-row-start: 4;     
+}
+.collage__img--5{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 1;
+    grid-row-start: 4;     
+}
 
 
 
