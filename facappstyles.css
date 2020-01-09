@@ -107,6 +107,7 @@ p {
     justify-content: center; 
 }
 
+
 /*tuto to re-en from here, this def works*/
 #slides {
     position: relative; /*this is positioned in the normal flow of the page but with margin 0 and padding 50 from container*/

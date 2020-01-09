@@ -47,12 +47,15 @@
 			</ul>
 		</div>
 
-		<!--I think this is how this works-->
+		<!--I think this is how this works...-->
 		<!--the first slide in stack shows automatically when page loads, then we start disappearing stuff and showing ones underneath -->
 		<script>
 			var slides = document.querySelectorAll('#slides .slide' ); /*new var- put in ALL slides please*/
 			var currentSlide = 0; /*new var called currentSlide, set it to 0*/
-			var slideInterval = setInterval(nextSlide,6000); /*ok.. why have slideInterval? It means u can easily change how long slide show for*/
+			var slideInterval = setInterval(nextSlide,6000); 
+			/*setInterval just calls the first argument at an interval of the second (miliseconds)*/
+			/*every 6000ms the nextSlide function is called*/
+			/*ok.. why have a slideInterval var? Readability: easily change how long slide show for*/
 
 			function nextSlide() {
 			    slides[currentSlide].className = 'slide'; /*go to the 0th slide first and put it into the slide class i.e disappear it with css*/
