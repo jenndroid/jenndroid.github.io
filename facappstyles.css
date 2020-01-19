@@ -2,10 +2,12 @@ body {
     font-family:Courier;
     text-align:center;
     }
+
 p { 
     color: rgb(237, 190, 202);
     font-size: 14px;
 }
+
 .collage-container{
     display:flex; 
     align-items: center; 
@@ -100,7 +102,7 @@ p {
     grid-row-start: 4;     
 }
 
-/*this just centers slideshow on page*/
+/*this just centers slideshow on page, inside its own container*/
 .slideshow-container{
     display:flex; 
     align-items: center; 
@@ -109,40 +111,35 @@ p {
 
 
 /*tuto to re-en from here, this def works*/
+
 #slides {
-    position: relative; /*this is positioned in the normal flow of the page but with margin 0 and padding 50 from container*/
+    position: relative; /*this is positioned in the normal flow of the page but with margin 0 and padding 50 from container edges*/
+    overflow: hidden;
     height: 500px;
     width: 375px;
     padding: 0px;
     margin: 50px;
-    list-style-type: none;
+    list-style-type: none; /*the list style and type are all set to none because this is some plain ole unordered list*/
 }
 
 /*absolute means positioned relative to the slideshow container rather than the viewport*/
-/*on slide, opacity goes to 0 (transparent) from 1 (opaque) over the course of 1 second (transition property)*/
-/*the z index is the position of this slide in the stack. The higher number is in front of the lower number*/
-
-/*so when the current slide is just 'slide' class it moves to the back of the stack and*/
-/*the opacity goes to transparent, over the course of 1 second*/
 .slide { 
     position: absolute;
-    left: 0px;
+    left: -375px;
     top: 0px;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    z-index: 1;
-
-    /*these lines just make sure the transition effect works on all browsers*/
-    -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    transition: opacity 1s;
+    opacity: 1; 
 }
 
-/*When the slide goes into 'showing' class it becomes opaque and moves to the front of the stack... I think that's how this works*/
-.showing {
-    opacity: 1;
-    z-index: 2;
+
+.enter {
+    left: 0;
+    transition: 10s;
+}
+
+.leave {
+    left: 750px;
+    transition: 10s;
 }
 
