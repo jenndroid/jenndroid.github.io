@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<link href="facappstyles.css" rel="stylesheet">
@@ -35,44 +35,20 @@
 			</div>
 
 
-		<!--This code just works by changing the class of each slide one by one-->
+		<!--I'm deleting all the slideshow stuff and starting again-->
 
 		<!-- First, this just puts the pictures in an UNORDERED list ie a STACK-->
 		<div class="slideshow-container">
-			<ul id="slides">
-				<li class="top-slide"> <img src='placeholder2.jpg' style="width:100%"> </li>
-				<li class="slide"> <img src='placeholder3.jpg' style="width:100%"> </li>
-				<li class="slide"> <img src='placeholder2.jpg' style="width:100%"> </li>
-				<li class="slide"> <img src='placeholder3.jpg' style="width:100%"> </li>
-				<li class="slide"> <img src='placeholder2.jpg' style="width:100%"> </li>
-			</ul>
+			<div class="slides">
+				<img src='placeholder2.jpg'>
+				<img src='placeholder3.jpg'>
+				<img src='placeholder2.jpg'>
+				<img src='placeholder3.jpg'>
+				<img src='placeholder2.jpg' >
+			</div>
 		</div>
-
-		<!--Have changed things... tried to slide things in and out but can still see slide under!-->
-		<!--the first slide in stack shows automatically when page loads, then we start disappearing stuff and showing ones underneath -->
-		<script>
-			var slides = document.querySelectorAll('#slides .slide' ); /*new var- put in ALL slides please*/
-			var currentSlide = 0; /*new var called currentSlide, set it to 0*/
-			var slideIntervalIn = setInterval(SlideIn,3000); 
-			var slideIntervalOut = setInterval(SlideOut, 9000);
-			/*setInterval just calls the first argument at an interval of the second (miliseconds)*/
-			/*every 6000ms the nextSlide function is called*/
-			/*ok.. why have a slideInterval var? Readability: easily change how long slide show for*/
-
-			function SlideIn() {
-			    slides[currentSlide].className = 'slide'; /*go to the 0th slide first and put it into the slide class i.e disappear it with css*/
-			    currentSlide = (currentSlide+1)%slides.length; /*this increments the currentSlide (ensures u just loop back to first with %)*/
-			    slides[currentSlide].className = 'slide enter'; /*now the 1st slide is moved to the 'slide showing' class*/
-			}
-
-			function SlideOut() {
-			    slides[currentSlide].className = 'slide'; /*go to the 0th slide first and put it into the slide class i.e disappear it with css*/
-			    currentSlide = (currentSlide+1)%slides.length; /*this increments the currentSlide (ensures u just loop back to first with %)*/
-			    slides[currentSlide].className = 'slide leave'; /*now the 1st slide is moved to the 'slide showing' class*/
-			}
-
-		</script>		
-
+		
+	
 		<div>	
 			<a href="https://www.instagram.com/visionova.studio" target="blank">
 				<img src="iconfinder_38-instagram_104466.png" title="visionova on instagram" width="40" height="40"/></a>
