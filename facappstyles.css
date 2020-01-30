@@ -116,3 +116,11 @@ p {
 
 }
 
+.Current_Slide_Container{
+    display:flex; 
+    align-items: center; 
+    justify-content: center;
+    border: 3px; 
+    margin: 50px;
+
+}
