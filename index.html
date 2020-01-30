@@ -35,19 +35,17 @@
 			</div>
 
 	
+		<!--This works but the transition is not very good and at some point there's a really long delay-->
 		<script>
 			var images = ['placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg'];
 
 			function changeImg(){
 				document.slide.src = images[0];	
 
-				for (let i = 0; i < 5; i++){ 
-					let Selected = images.shift();
-					images.push(Selected);
-					document.slide.src = images[0];	
-				}
+				let Selected = images.shift();
+				images.push(Selected);
 
-			setTimeout('changeImg()', 3000);			
+			setTimeout("changeImg()", 3000);			
 			}
 
 		window.onload = changeImg;	
