@@ -4,7 +4,6 @@
 		<link href="facappstyles.css" rel="stylesheet">
 		<title> MONDO VISIONOVA </title>
 		<h1>Visionova logo here, in centre, spinning!<h1>
-			<script src="slide.js"></script>
 	</head>
 	<body>
 		<div class="collage-container"> <!-- I had to put the collage inside a container then centre the contents of the container lol-->
@@ -35,9 +34,27 @@
 				<p>I've used the prerequisite to build a webpage as an opportunity to make a small portfolio website for visionova.studio, the 'design studio' which really consists of me, my dining room table & a bookshelf of art supplies. Although I plan on becoming a full time web developer, I love to design and hope to keep dreaming, and drawing, for a long time on the side.</p>
 			</div>
 
-		<div class = "Current_Slide_Container">
+	
+		<script>
+			var images = ['placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg'];
 
-		</div>	
+			function changeImg(){
+				document.slide.src = images[0];	
+
+				for (let i = 0; i < 5; i++){ 
+					let Selected = images.shift();
+					images.push(Selected);
+					document.slide.src = images[0];	
+				}
+
+			setTimeout('changeImg()', 3000);			
+			}
+
+		window.onload = changeImg;	
+		</script>
+
+
+		<img name="slide" width='375' height='500'></div>	
 	
 		<div>	
 			<a href="https://www.instagram.com/visionova.studio" target="blank">

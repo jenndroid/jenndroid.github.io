@@ -106,21 +106,12 @@ p {
 .slideshow-container{
     width:375px;
     height: 500px;
+    border: 3px solid black;
     margin: auto;
 }
 
-.slides {
-    display: flex;
-    width:100%;
-    overflow: hidden;
-
+.showing{
+    width:375px;
+    height: 500px;
 }
 
-.Current_Slide_Container{
-    display:flex; 
-    align-items: center; 
-    justify-content: center;
-    border: 3px; 
-    margin: 50px;
-
-}
