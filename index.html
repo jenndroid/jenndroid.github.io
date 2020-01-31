@@ -34,26 +34,62 @@
 				<p>I've used the prerequisite to build a webpage as an opportunity to make a small portfolio website for visionova.studio, the 'design studio' which really consists of me, my dining room table & a bookshelf of art supplies. Although I plan on becoming a full time web developer, I love to design and hope to keep dreaming, and drawing, for a long time on the side.</p>
 			</div>
 
+		<br>
+		<div class="slideshow-container">
+			<!--This is just the picture to be changed-->
+			<img name="slide" width='375' height='500'>
+			
+			<button class="Pbutton" id="pause">Pause</button>
+		</div>
+		</br>
+
 	
-		<!--This works but the transition is not very good and at some point there's a really long delay-->
+		<!--FIXED: the long delay... I just had two of the same jpgs in a row...-->
+		<!--FIXED: the JS had to be below the creation of the button in HTML -->
+		<!--FIXED: the pause button only worked the first time because I wasn't creating a new intervalID with the subsequent calls-->
+		
+		<!--Seems like there's no good way to animate a transition with a changing image source... 
+		What if I make this janky transition into a stop motion animation?-->
 		<script>
-			var images = ['placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg'];
+			var images = ['placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg', 
+						'placeholder3.jpg', 'placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg', 'placeholder3.jpg' ];
 
-			function changeImg(){
-				document.slide.src = images[0];	
+			var intervalID = setInterval("autoPlay()", 500);	
+			var playing = true;
 
-				let Selected = images.shift();
-				images.push(Selected);
+			document.getElementById("pause").style.color = "magenta"; //unnecessary but I'm keeping it because it's cute
+			var pauseButton = document.getElementById("pause");
+			
+			function autoPlay(){
+					document.slide.src = images[0];	
 
-			setTimeout("changeImg()", 3000);			
+					let Selected = images.shift();
+					images.push(Selected);		
+				}
+
+			function pauseSlideshow() {
+			    pauseButton.innerHTML = 'Play';
+			    playing = false;
+			    clearInterval(intervalID);
 			}
 
-		window.onload = changeImg;	
+			function playSlideshow() {
+			    pauseButton.innerHTML = 'Pause';
+			    playing = true;
+			    intervalID = setInterval("autoPlay()", 500);
+			}
+
+			pauseButton.onclick = function() {
+			    if(playing) {
+			    pauseSlideshow();
+			  } else {
+			    playSlideshow();
+			  }
+			};
+		
 		</script>
 
-
-		<img name="slide" width='375' height='500'></div>	
-	
+		<br>
 		<div>	
 			<a href="https://www.instagram.com/visionova.studio" target="blank">
 				<img src="iconfinder_38-instagram_104466.png" title="visionova on instagram" width="40" height="40"/></a>
@@ -64,5 +100,6 @@
 			<a href="https://www.codewars.com/users/jenndroid/completed" target="blank">
 				<img src="codewars-logo.png" title="codewars page" width="40" height="40"/></a>
 		</div>
+		</br>
 	</body>	
 </html>
