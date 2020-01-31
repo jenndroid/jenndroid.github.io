@@ -38,9 +38,9 @@
 		<div class="slideshow-container">
 			<!--This is just the picture to be changed-->
 			<img name="slide" width='375' height='500'>
-			<button class="button" id="prev">Prev</button>
+			<button class="button-hidden" id="prev">Prev</button>
 			<button class="button" id="pause">Pause</button>
-			<button class="button" id="next">Next</button>
+			<button class="button-hidden" id="next">Next</button>
 
 		</div>
 		</br>
@@ -76,12 +76,16 @@
 
 			function pauseSlideshow() {
 			    pauseButton.innerHTML = 'Play';
+			    document.getElementById("prev").className = "button-appear";
+			    document.getElementById("next").className = "button-appear";
 			    playing = false;
 			    clearInterval(intervalID);
 			}
 
 			function playSlideshow() {
 			    pauseButton.innerHTML = 'Pause';
+			    document.getElementById("prev").className = "button-hidden";
+			    document.getElementById("next").className = "button-hidden";
 			    playing = true;
 			    intervalID = setInterval("PushNext()", 500);
 			}

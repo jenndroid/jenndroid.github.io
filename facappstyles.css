@@ -109,10 +109,15 @@ p {
     margin: auto;
 }
 
-.hidden{
+
+
+.button-hidden{
     opacity: 0;
 }
 
-.button{
+.button-appear{
+    opacity: 1;
 }
+
+
 
