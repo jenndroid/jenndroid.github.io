@@ -38,8 +38,10 @@
 		<div class="slideshow-container">
 			<!--This is just the picture to be changed-->
 			<img name="slide" width='375' height='500'>
-			
-			<button class="Pbutton" id="pause">Pause</button>
+			<button class="button" id="prev">Prev</button>
+			<button class="button" id="pause">Pause</button>
+			<button class="button" id="next">Next</button>
+
 		</div>
 		</br>
 
@@ -47,6 +49,7 @@
 		<!--FIXED: the long delay... I just had two of the same jpgs in a row...-->
 		<!--FIXED: the JS had to be below the creation of the button in HTML -->
 		<!--FIXED: the pause button only worked the first time because I wasn't creating a new intervalID with the subsequent calls-->
+		<!--FIXED: on window load only saw grey slide border because slide only loaded with 1st PushNext call-->
 		
 		<!--Seems like there's no good way to animate a transition with a changing image source... 
 		What if I make this janky transition into a stop motion animation?-->
@@ -54,18 +57,22 @@
 			var images = ['placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg', 
 						'placeholder3.jpg', 'placeholder2.jpg', 'placeholder3.jpg', 'placeholder2.jpg', 'placeholder3.jpg' ];
 
-			var intervalID = setInterval("autoPlay()", 500);	
+			var intervalID = setInterval("PushNext()", 500);	
 			var playing = true;
+			document.slide.src = images[0];	
+
 
 			document.getElementById("pause").style.color = "magenta"; //unnecessary but I'm keeping it because it's cute
 			var pauseButton = document.getElementById("pause");
-			
-			function autoPlay(){
-					document.slide.src = images[0];	
+			var prevButton = document.getElementById("prev");
+			var nextButton = document.getElementById("next");
 
-					let Selected = images.shift();
-					images.push(Selected);		
-				}
+
+			function PushNext(){
+				let selectedNext = images.shift();
+				images.push(selectedNext);	
+				document.slide.src = images[0];	
+			}
 
 			function pauseSlideshow() {
 			    pauseButton.innerHTML = 'Play';
@@ -76,7 +83,14 @@
 			function playSlideshow() {
 			    pauseButton.innerHTML = 'Pause';
 			    playing = true;
-			    intervalID = setInterval("autoPlay()", 500);
+			    intervalID = setInterval("PushNext()", 500);
+			}
+
+			function pushPrev(){
+				let selectedPrev = images[images.length-1];
+				images.pop(selectedPrev);
+				images.unshift(selectedPrev);
+				document.slide.src = images[0];
 			}
 
 			pauseButton.onclick = function() {
@@ -86,6 +100,17 @@
 			    playSlideshow();
 			  }
 			};
+
+			prevButton.onclick = function() {
+				pauseSlideshow();
+				pushPrev();
+			}
+
+			nextButton.onclick = function () {
+				pauseSlideshow();
+				PushNext();
+			}
+
 		
 		</script>
 
