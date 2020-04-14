@@ -8,6 +8,14 @@ p {
     font-size: 14px;
 }
 
+.text-container{ 
+	display: inline-block;
+	width: 80vw;
+	text-align: center;
+    align-items: center; 
+    margin: 50px;
+}
+
 .collage-container{
     display:flex; 
     align-items: center; 
