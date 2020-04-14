@@ -48,7 +48,7 @@
 
 					function showPic(){
 						pics[currentPic].className = 'hidden';
-						currentPic = (currentPic+1%pics.length);
+						currentPic = ((currentPic+1)%pics.length);
 						pics[currentPic].className = 'showing';
 					}
 				</script>
