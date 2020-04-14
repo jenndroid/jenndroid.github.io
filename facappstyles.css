@@ -21,10 +21,22 @@ p {
     grid-template-columns: repeat(6, 187.5px);
 }
 
-/*I don't really know what this code does because I just googled around and tried things from various reddit questions*/
-/*I am targeting the specific image with this class, not the item (in my code, are the item and image linked?? confusion)*/
+/*Easter Idea: the collaged images all overlap and code makes them appear and disappear!*/
+/*I can do this by setting all images to transparent opacity and then one by one on a loop transferring them to a differnt class called showing*/
+/*in which opacity is 100%. Wonder if I can do it randomly??*/
+
+/*googled around and tried things from various reddit questions to figure out how to insert different sizes*/
+/*I am targeting the specific image with this class, not the item*/
 /*first four lines are what allowed me to actually achieve the resizing! grid-column instructions without these didn't work*/
-.collage__img--1{
+#collage__item--1{
+    width: 200%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 1;
+}
+
+#collage__img--1{
     width: 100%;
     height: 100%;
     display: block;
@@ -36,22 +48,28 @@ p {
 }
 
 /*this code works for actual size (two grid boxes)*/
-.collage__img--2{
-    width: 200%;
+#collage__item--2{
+    width: 100%;
     height: 200%;
     display: block;
     object-fit: cover;
     grid-column-start: 2;
-    grid-column-end: 4;
+}
+
+#collage__img--2{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 3;      
+    grid-row-end: 3;   
 }
 
 
-/*for triple the size it looks like I need to code the collage item first like this, then the image separately underneath...*/
-/*notice that the ITEM is at 300% but the img is at 100%*/
-/*dunno why this works... do I need both these bits?? */
-.collage__item--3{
+/*notice that the ITEM is at 300% but the img is at 100% of that*/
+#collage__item--3{
     width: 300%;
     height: 300%;
     display: block;
@@ -59,7 +77,7 @@ p {
     grid-column-start: 4;
 }
 
-.collage__img--3{
+#collage__img--3{
     width: 100%;
     height: 100%;
     display: block;
@@ -67,8 +85,7 @@ p {
     grid-column-start: 4;
 }
 
-/*again I had to write the item and then the img inside it for the last two*/
-.collage__item--4{
+#collage__item--4{
     width: 200%;
     height: 200%;
     display: block;
@@ -76,31 +93,104 @@ p {
     grid-column-start: 3;
     grid-row-start: 2;     
 }
-.collage__img--4{
+#collage__img--4{ 
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
     grid-column-start: 3;
-    grid-row-start: 2;     
+    grid-row-start: 2;   
 }
 
-.collage__item--5{
+#collage__item--5{
+    width: 200%;
+    height: 200%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 1;
+    grid-row-start: 2;     
+}
+#collage__img--5{
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
     grid-column-start: 1;
-    grid-row-start: 4;     
+    grid-row-start: 2;  
 }
-.collage__img--5{
+
+#collage__item--6{
+    width: 100%;
+    height: 200%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+#collage__img--6{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;      
+}
+
+#collage__item--7{
+    width: 200%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 4;
+    grid-row-start: 3;
+}
+
+#collage__img--7{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 3;      
+}
+
+#collage__item--8{
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
     grid-column-start: 1;
-    grid-row-start: 4;     
 }
+
+#collage__img--8{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 1;     
+}
+
+#collage__item--9{
+    width: 200%;
+    height: 200%;
+    display: block;
+    object-fit: cover;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#collage__img--9{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;    
+}
+
 
 
 .slideshow-container{
@@ -109,14 +199,28 @@ p {
     margin: auto;
 }
 
-
-
 .button-hidden{
     opacity: 0;
 }
 
 .button-appear{
     opacity: 1;
+}
+
+.hidden{
+    opacity: 0;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing{
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
 }
 
 

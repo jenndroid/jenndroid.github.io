@@ -26,4 +26,12 @@ arr.pop(selectedPrev);
 arr.unshift(selectedPrev);
 console.log(arr, arr[0]);
 
+function pushPrev(){
+				let selectedPrev = images[images.length-1];
+				images.pop(selectedPrev);
+				images.unshift(selectedPrev);
+				document.slide.src = images[0];
+			}
+
+
 

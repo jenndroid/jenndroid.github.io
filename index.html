@@ -5,30 +5,59 @@
 		<title> MONDO VISIONOVA </title>
 		<h1>Visionova logo here, in centre, spinning!<h1>
 	</head>
-	<body>
+	<body> <!--Put the first batch of images in... may change or add. -->
+
 		<div class="collage-container"> <!-- I had to put the collage inside a container then centre the contents of the container lol-->
 			<div class="collage">
-				 <div class="collage__item collage__item--1"> <!-- Had to be in a div element not figure- figure couldn't be targeted in css?? -->
-    				<img src="placeholder2.jpg" class="collage__img--1" alt="Image 1">
+				 <div id="collage__item--1"> <!-- Had to be in a div element not figure- figure couldn't be targeted in css?? -->
+    				<img src="ghost_photo_2.jpg" class="collage-pic" id="collage__img--1">
   				</div>
-  				<div class="collage__item collage__item--2"> 
-    				<img src="placeholder3.jpg" class="collage__img--2" alt="Image 2">
+  				<div id="collage__item--2"> 
+    				<img src="scorch_costume.jpg" class="collage-pic hidden" id="collage__img--2">
   				</div>
-  				<div class="collage__item collage__item--3"> 
-    				<img src="placeholder3.jpg" class="collage__img--3" alt="Image 3">
+  				<div id="collage__item--3"> 
+    				<img src="strap_portrait.jpg" class="collage-pic hidden" id="collage__img--3">
   				</div>
-  				<div class="collage__item collage__item--4"> <!-- Had to be in a div element not figure- figure couldn't be targeted in css?? -->
-    				<img src="placeholder2.jpg" class="collage__img--4" alt="Image 4">
+  				<div id="collage__item--4"> 
+    				<img src="strap_costume.jpg" class="colllage-pic hidden"  id="collage__img--4">
   				</div>
-  				<div class="collage__item collage__item--5"> <!-- Had to be in a div element not figure- figure couldn't be targeted in css?? -->
-    				<img src="placeholder2.jpg" class="collage__img--5" alt="Image 5">
+  				<div id="collage__item--5"> 
+    				<img src="scorch_portrait_2.jpg" class="collage-pic hidden" id="collage__img--5">
+  				</div>
+  				<div id="collage__item--6"> 
+    				<img src="burnt_scrap.jpg" class="collage-pic hidden" id="collage__img--6">
+  				</div>
+  				<div id="collage__item--7"> 
+    				<img src="ghost_photo_1.jpg" class="collage-pic hidden" id="collage__img--7">
+  				</div>
+  				<div id="collage__item--8"> 
+    				<img src="kenny_1.jpg" class="collage-pic hidden" id="collage__img--8">
+  				</div>
+  				<div id="collage__item--9"> 
+    				<img src="kenny_4.jpg" class="collage-pic hidden" id="collage__img--9">
   				</div>
 			</div>
 		</div>
 
+			<!--Ok this is where I try to cycle images in and out. ATM they all show up, then cycle through really big! Classname prob?-->	
+			<div>
+				<script type="text/javascript">
+					var pics = document.querySelectorAll('.collage-pic');
+					var currentPic = 0;
+					var fadeInterval = setInterval(showPic, 3000);
+
+					function showPic(){
+						pics[currentPic].className = 'hidden';
+						currentPic = (currentPic+1%pics.length);
+						pics[currentPic].className = 'showing';
+					}
+				</script>
+			</div>
+				
+
 			<!--why is this text so bloody wide when zoomed out???-->
 			<div> 
-				<p>Welcome to my application for FAC Spring 2020! I am applying because I have been teaching myself to code using MOOCs and books for a year on and off, and I would like to take the next step to becoming a professional software designer. I regularly attend Codebar and that's where I met
+				<p>Welcome to my application for FAC Summer 2020! I am applying because I have been teaching myself to code using MOOCs and books for a year on and off, and I would like to take the next step to becoming a professional software designer. I regularly attend Codebar and that's where I met
 				some members of the Spring 2019 cohort, who were inspiring in their coolness and enthusiasm. I decided to apply that evening and filled in an expression of interest on the tube home.</p>
 				<p>I initially got into coding because I had a place on the Product Design bachelor's at CSM, but couldn't take the place as I already had a degree. I knew I wanted to work making a wide array of different things and gain technical knowledge as well, but I was quite defeated until I started wondering if I would be up to learning how to code. It was really Karlie Kloss that pushed me to try- I thought if she could do it, I could too. I read about Harvard CS50 online and jumped straight in with C.</p>
 				<p>I've used the prerequisite to build a webpage as an opportunity to make a small portfolio website for visionova.studio, the 'design studio' which really consists of me, my dining room table & a bookshelf of art supplies. Although I plan on becoming a full time web developer, I love to design and hope to keep dreaming, and drawing, for a long time on the side.</p>
@@ -113,8 +142,6 @@
 				pauseSlideshow();
 				PushNext();
 			}
-
-		
 		</script>
 
 		<br>
