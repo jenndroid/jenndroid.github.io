@@ -3,7 +3,7 @@
 	<head>
 		<link href="facappstyles.css" rel="stylesheet">
 		<title> MONDO VISIONOVA </title>
-		<h1>Visionova logo here<h1>
+		<h1>Visionova logo here<h1> 
 	</head>
 	<body> <!--Put the first batch of images in... may change or add. -->
 
@@ -44,7 +44,7 @@
 				<script type="text/javascript">
 					var pics = document.querySelectorAll('.collage-pic');
 					var currentPic = 0;
-					var fadeInterval = setInterval(showPic, 5000);
+					var fadeInterval = setInterval(showPic, 2000);
 
 					function showPic(){
 						pics[currentPic].className = 'hidden';
@@ -81,9 +81,31 @@
 		<!--Seems like there's no good way to animate a transition with a changing image source... 
 		What if I make this janky transition into a stop motion animation?-->
 		<script>
-			var images = ['A.jpg', 'B.png', 'C.jpg'];
+			var images = ['ken1.jpg', 
+						'ken2.png', 
+						'ken3.jpg', 
+						'ken4.jpg', 
+						'ken5.jpg', 
+						'ken6.jpg', 
+						'ken7.jpg',
+						'ken8.jpg',
+						'ken9.jpg', 
+						'ken10.jpg', 
+						'ken11.jpg', 
+						'ken12.jpg',
+						'ken13.jpg',
+						'ken14.jpg',
+						'ken15.jpg',
+						'ken16.jpg',
+						'ken17.jpg',
+						'ken18.jpg',
+						'ken19.jpg',
+						'ken20.jpg', 
+						'ken21.jpg',
+						'ken22.jpg',
+						'ken23.jpg' ];
 
-			var intervalID = setInterval("PushNext()", 500);	
+			var intervalID = setInterval("PushNext()", 200);	
 			var playing = true;
 			document.slide.src = images[0];	
 
