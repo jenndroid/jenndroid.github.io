@@ -58,7 +58,7 @@ p {
 /*this code works for actual size (two grid boxes)*/
 #collage__item--2{
     width: 100%;
-    height: 200%;
+    height: 100%;
     display: block;
     object-fit: cover;
     grid-column-start: 2;
