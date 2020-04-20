@@ -29,10 +29,6 @@ p {
     grid-template-columns: repeat(4, 187.5px);
 }
 
-/*Easter Idea: the collaged images all overlap and code makes them appear and disappear!*/
-/*I can do this by setting all images to transparent opacity and then one by one on a loop transferring them to a differnt class called showing*/
-/*in which opacity is 100%. Wonder if I can do it randomly??*/
-
 /*googled around and tried things from various reddit questions to figure out how to insert different sizes*/
 /*I am targeting the specific image with this class, not the item*/
 /*first four lines are what allowed me to actually achieve the resizing! grid-column instructions without these didn't work*/
@@ -225,11 +221,15 @@ specified all start and end positions*/
 }
 
 
-
 .slideshow-container{
     width:375px;
     height: 500px;
     margin: auto;
+}
+
+.button{
+    font-family: Courier;
+    color: rgb(237, 68, 131);
 }
 
 .button-hidden{
@@ -237,6 +237,7 @@ specified all start and end positions*/
 }
 
 .button-appear{
+    font-family: Courier;
     opacity: 1;
 }
 

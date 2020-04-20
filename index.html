@@ -1,16 +1,14 @@
 	<!DOCTYPE html>
-<!--Friday 17 gh v slow can't make fixes- 3 small pics in collage not showing up and kenny in animations some are sideways and need resizing-->
 <html lang="en">
 	<head>
 		<link href="facappstyles.css" rel="stylesheet">
 		<title> MONDO VISIONOVA </title>
 		<h1>VISIONOVA STUDIO<h1> 
 	</head>
-	<body> <!--Put the first batch of images in... may change or add. -->
+	<body> 
 
-		<div class="collage-container"> <!-- I had to put the collage inside a container then centre the contents of the container lol-->
+		<div class="collage-container">
 			<div class="collage">
-				<!-- The grid now fits but the images will need to be resized and replaced- poss keep the grid 500hX923w but redraw lines -->
 				 <div id="collage__item--1">
     				<img src="ghost_photo_2.jpg" class="collage-pic" id="collage__img--1">
   				</div> 
@@ -57,30 +55,20 @@
 				
 			<div class="text-container"> 
 				<p>Welcome to my application for FAC Summer 2020! I am applying because I have been teaching myself to code using MOOCs and books for a year on and off, and I would like to take the next step to becoming a professional software designer. I regularly attend Codebar and that's where I met
-				some members of the Spring 2019 cohort, who were inspiring in their coolness and enthusiasm. .</p>
-				<p>I initially got into coding because I had a place on the Product Design bachelor's at CSM, but couldn't take the place as I already had a degree. I knew I wanted to work making a wide array of different things and gain technical knowledge as well, but I was quite defeated until I started wondering if I would be up to learning how to code. It was really Karlie Kloss that pushed me to try- I thought if she could do it, I could too. I read about Harvard CS50 online and jumped straight in with C.</p>
-				<p>I've used the prerequisite to build a webpage as an opportunity to make a small portfolio website for visionova.studio, the 'design studio' which really consists of me, my dining room table & a bookshelf of art supplies. Although I plan on becoming a full time web developer, I love to design and hope to keep dreaming, and drawing, for a long time on the side.</p>
+				some members of the Spring 2019 cohort, who were inspiring in their coolness and enthusiasm. </p>
+				<p>I initially got into coding because I had a place on the Product Design bachelor's at CSM, but couldn't take the place as I already had a degree and couldn't afford the fees. I knew I wanted to work making a wide array of different things and gain technical knowledge as well, but I was quite defeated until I started wondering if I would be up to learning how to code. It was really Karlie Kloss that pushed me to try- I thought if she could do it, I could too. I read about Harvard CS50 online and jumped straight in with C.</p>
+				<p>I've used the prerequisite to build a webpage as an opportunity to make a small portfolio website for visionova.studio, the 'design studio' which really consists of me, my dining room table & a bookshelf of art supplies. The collage above is made up of work pulled from a few different project sketchbooks, and below is my first attempt at a stop motion animation of a character I made up called Kenny, who represents frantic anxiety. Although I plan on becoming a full time web developer, I love to design and hope to keep dreaming, and drawing, for a long time on the side.</p>
 			</div>
 
 		<br>
 		<div class="slideshow-container">
-			<!--This is just the picture to be changed-->
 			<img name="slide" width='375' height='500'>
 			<button class="button-hidden" id="prev">Prev</button>
 			<button class="button" id="pause">Pause</button>
 			<button class="button-hidden" id="next">Next</button>
-
 		</div>
 		</br>
-
-	
-		<!--FIXED: the long delay... I just had two of the same jpgs in a row...-->
-		<!--FIXED: the JS had to be below the creation of the button in HTML -->
-		<!--FIXED: the pause button only worked the first time because I wasn't creating a new intervalID with the subsequent calls-->
-		<!--FIXED: on window load only saw grey slide border because slide only loaded with 1st PushNext call-->
 		
-		<!--Seems like there's no good way to animate a transition with a changing image source... 
-		What if I make this janky transition into a stop motion animation?-->
 		<script>
 			var images = ['ken8.jpg',
 						'ken9.jpg', 
@@ -104,7 +92,6 @@
 			document.slide.src = images[0];	
 
 
-			document.getElementById("pause").style.color = "magenta"; //unnecessary but I'm keeping it because it's cute
 			var pauseButton = document.getElementById("pause");
 			var prevButton = document.getElementById("prev");
 			var nextButton = document.getElementById("next");
