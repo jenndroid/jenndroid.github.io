@@ -4,11 +4,12 @@ body {
     }
 
 p { 
-    color: rgb(237, 190, 202);
+    color: rgb(237, 190, 202); /*colour picker chrome extension!*/
     font-size: 14px;
 }
 
-.text-container{ 
+/*keeps text in center of viewport*/
+.text-container{
 	display: inline-block;
 	width: 80vw;
 	text-align: center;
@@ -29,9 +30,8 @@ p {
     grid-template-columns: repeat(4, 187.5px);
 }
 
-/*googled around and tried things from various reddit questions to figure out how to insert different sizes*/
-/*I am targeting the specific image with this class, not the item*/
-/*first four lines are what allowed me to actually achieve the resizing! grid-column instructions without these didn't work*/
+/*In the grid, each picture is inserted into an item id, which is sized to cover a certain amount of grid blocks with percentage syntax*/
+/*The image is then sized to be 100% of the relevant item!*/
 #collage__item--1{
     width: 200%;
     height: 100%;
@@ -76,8 +76,8 @@ p {
 }
 
 
-/*ok I had to change: 
-resized the image to 375 and 500
+/*This one was difficult to insert and breaks the rules! 
+resized the image itself to 375 and 500
 the width and height are now 100% not 300%- for both image and item
 specified all start and end positions*/
 #collage__item--3{
@@ -221,6 +221,7 @@ specified all start and end positions*/
 }
 
 
+/*the slideshow is the stop animation*/
 .slideshow-container{
     width:375px;
     height: 500px;
@@ -229,7 +230,7 @@ specified all start and end positions*/
 
 .button{
     font-family: Courier;
-    color: rgb(237, 68, 131);
+    color: rgb(237, 68, 131); 
 }
 
 .button-hidden{

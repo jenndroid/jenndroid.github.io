@@ -3,12 +3,12 @@
 	<head>
 		<link href="facappstyles.css" rel="stylesheet">
 		<title> MONDO VISIONOVA </title>
-		<h1>VISIONOVA STUDIO<h1> 
+		<h1>VISIONOVA STUDIO<h1>  
 	</head>
 	<body> 
 
-		<div class="collage-container">
-			<div class="collage">
+		<div class="collage-container"> <!-- centres collage  -->
+			<div class="collage"> <!-- defines size  & quantitiy of grid boxes, hover over element in dev tools to see -->
 				 <div id="collage__item--1">
     				<img src="ghost_photo_2.jpg" class="collage-pic" id="collage__img--1">
   				</div> 
@@ -40,10 +40,10 @@
 		</div>
 
 			<div>
-				<script type="text/javascript">
+				<script type="text/javascript"> //all pictures are in a class w/opacity 0 and change consecutively into 'showing' class 
 					var pics = document.querySelectorAll('.collage-pic');
 					var currentPic = 0;
-					var fadeInterval = setInterval(showPic, 2000);
+					var fadeInterval = setInterval(showPic, 2000); //showpic changes their class every 2 seconds, easy to change fadeInterval here
 
 					function showPic(){
 						pics[currentPic].className = 'hidden';
@@ -62,14 +62,16 @@
 
 		<br>
 		<div class="slideshow-container">
-			<img name="slide" width='375' height='500'>
-			<button class="button-hidden" id="prev">Prev</button>
+			<img name="slide" width='375' height='500'> <!-- hard coded for iPhone picture ratios!-->
+			<button class="button-hidden" id="prev">Previous</button>
 			<button class="button" id="pause">Pause</button>
 			<button class="button-hidden" id="next">Next</button>
 		</div>
 		</br>
 		
-		<script>
+		<script> 
+			//not very sophisticated but the most original way! Image source is 0 of arr images, and 0 is changed by pushing & popping
+			//no transition possible here so have made a stop motion slideshow
 			var images = ['ken8.jpg',
 						'ken9.jpg', 
 						'ken10.jpg', 
@@ -87,16 +89,20 @@
 						'ken22.jpg',
 						'ken23.jpg' ];
 
-			var intervalID = setInterval("PushNext()", 200);	
+			//decide how often images[0] is changed here
+			//intervalID makes sure you don't get overlapping lots of 2-second-timed calls which makes for jumpy slideshow
+			//set playing to true for buttons later and just show the image at [0] of the arrat			
+			var intervalID = setInterval("PushNext()", 200);  
 			var playing = true;
 			document.slide.src = images[0];	
 
 
+			//link buttons to be clicked to an element in the document
 			var pauseButton = document.getElementById("pause");
 			var prevButton = document.getElementById("prev");
 			var nextButton = document.getElementById("next");
 
-
+			//changes images[0] with shift from beginning and pushing onto end to show consecutively
 			function PushNext(){
 				let selectedNext = images.shift();
 				images.push(selectedNext);	
@@ -104,11 +110,11 @@
 			}
 
 			function pauseSlideshow() {
-			    pauseButton.innerHTML = 'Play';
-			    document.getElementById("prev").className = "button-appear";
+			    pauseButton.innerHTML = 'Play'; //change text on button
+			    document.getElementById("prev").className = "button-appear"; //make nav buttons show up
 			    document.getElementById("next").className = "button-appear";
-			    playing = false;
-			    clearInterval(intervalID);
+			    playing = false; //set for pause and play later
+			    clearInterval(intervalID); //clear the interval and start a fresh one!
 			}
 
 			function playSlideshow() {
@@ -116,9 +122,10 @@
 			    document.getElementById("prev").className = "button-hidden";
 			    document.getElementById("next").className = "button-hidden";
 			    playing = true;
-			    intervalID = setInterval("PushNext()", 200);
+			    intervalID = setInterval("PushNext()", 200); //var already declared above! Just reassigning
 			}
 
+			//takes last element from images and unshifts to be images[0]
 			function pushPrev(){
 				let selectedPrev = images[images.length-1];
 				images.pop(selectedPrev);
@@ -126,6 +133,7 @@
 				document.slide.src = images[0];
 			}
 
+			//checks whether playing is true or not, as set by functions above, to decide stop/start
 			pauseButton.onclick = function() {
 			    if(playing) {
 			    pauseSlideshow();
@@ -134,6 +142,7 @@
 			  }
 			};
 
+			//on clicking either button, pause will be called prior to calling change in array
 			prevButton.onclick = function() {
 				pauseSlideshow();
 				pushPrev();
@@ -143,10 +152,29 @@
 				pauseSlideshow();
 				PushNext();
 			}
+
+			//when a key is pressed, checks if it was the space,left,right button and calls relevant nav function
+			//have not made the r/l keys pause first as I believe user will pause first intuitively????
+			document.onkeydown = function(event){
+				if (event.keyCode === 37){
+					pushPrev();
+				}
+				else if (event.keyCode === 39){
+					PushNext();
+				}
+				else if (event.keyCode === 32 && playing == true){
+					pauseSlideshow();
+				}
+				else if (event.keyCode === 32 && playing == false){
+					playSlideshow();
+				}
+
+			}
+
 		</script>
 
 		<br>
-		<div>	
+		<div> <!-- all required links plus instagram open in new window-->
 			<a href="https://www.instagram.com/visionova.studio" target="blank">
 				<img src="iconfinder_38-instagram_104466.png" title="visionova on instagram" width="30" height="30"/></a>
 			<a href="https://www.github.com/jenndroid/jenndroid.github.io" target="blank">
