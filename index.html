@@ -155,7 +155,7 @@
 
 			//when a key is pressed, checks if it was the space,left,right button and calls relevant nav function
 			//have not made the r/l keys pause first as I believe user will pause first intuitively????
-			document.onkeydown = function(event){
+			document.onKeyDown = function(event){
 				if (event.keyCode === 37){
 					pushPrev();
 				}
@@ -168,7 +168,6 @@
 				else if (event.keyCode === 32 && playing == false){
 					playSlideshow();
 				}
-
 			}
 
 		</script>
